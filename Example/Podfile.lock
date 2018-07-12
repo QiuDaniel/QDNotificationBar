@@ -1,0 +1,16 @@
+PODS:
+  - QDNotificationBar (0.1.0)
+
+DEPENDENCIES:
+  - QDNotificationBar (from `../`)
+
+EXTERNAL SOURCES:
+  QDNotificationBar:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  QDNotificationBar: 2cc2576dc61d04ea7c8de7475b44ab0167a6303a
+
+PODFILE CHECKSUM: 777d7f864983b8daa057d6d74d336ac97eef9841
+
+COCOAPODS: 1.5.3
