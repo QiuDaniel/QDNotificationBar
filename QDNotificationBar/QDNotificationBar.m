@@ -35,6 +35,9 @@
 
 @end
 
+static NSMutableArray<QDNotificationBar *> *bars;
+static QDNotificationWindow *singletonWindow;
+
 @implementation QDNotificationBar
 
 - (void)dealloc {
