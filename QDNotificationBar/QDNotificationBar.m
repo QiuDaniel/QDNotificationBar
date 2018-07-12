@@ -72,10 +72,10 @@ static QDNotificationWindow *singletonWindow;
             AudioServicesPlaySystemSound(isMute ? kSystemSoundID_Vibrate: soundID);
         }];
     }
-    [singletonWindow.rootViewController.view addSubview:self.maker.view];
-    self.maker.view.frame = [self hideFrame];
+    [singletonWindow.rootViewController.view addSubview:self.maker.customView];
+    self.maker.customView.frame = [self hideFrame];
     [UIView animateWithDuration:self.maker.animationDuration animations:^{
-        self.maker.view.frame = [self showFrame];
+        self.maker.customView.frame = [self showFrame];
     } completion:^(BOOL finished) {
         if (self.maker.stayDuration > 0) {
             [self performSelector:@selector(hide) withObject:nil afterDelay:self.maker.stayDuration];
@@ -84,14 +84,14 @@ static QDNotificationWindow *singletonWindow;
 }
 
 - (void)hide {
-    if (!self.maker.view.superview) {
+    if (!self.maker.customView.superview) {
         return;
     }
     [UIView animateWithDuration:self.maker.animationDuration animations:^{
-        self.maker.view.frame = [self hideFrame];
+        self.maker.customView.frame = [self hideFrame];
     } completion:^(BOOL finished) {
-        if (self.maker.view.superview) {
-            [self.maker.view removeFromSuperview];
+        if (self.maker.customView.superview) {
+            [self.maker.customView removeFromSuperview];
         }
         if ([bars containsObject:self]) {
             [bars removeObject:self];
@@ -103,7 +103,7 @@ static QDNotificationWindow *singletonWindow;
 // MARK: - Private
 
 - (CGRect)showFrame {
-    return self.maker.portraitFrame;
+    return self.maker.barFrame;
 }
 
 - (CGRect)hideFrame {
