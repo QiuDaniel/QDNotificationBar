@@ -20,6 +20,9 @@ typedef NS_ENUM(NSUInteger, QDNotificationBarAppearModel) {
 
 + (instancetype)makeNotificationBarWithCustomView:(UIView *)view block:(void(^)(QDNBMaker *make))block;
 
+- (void)show;
+- (void)hide;
+
 @end
 
 @interface QDNBMaker : NSObject
