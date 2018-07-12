@@ -7,6 +7,9 @@
 //
 
 #import "QDNotificationBar.h"
+#import "QDNotificationWindow.h"
+#import <AudioToolbox/AudioToolbox.h>
+#import "QDMuteDetector.h"
 
 @interface QDNBMaker ()
 
