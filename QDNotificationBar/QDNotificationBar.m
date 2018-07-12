@@ -40,6 +40,7 @@
 
 static NSMutableArray<QDNotificationBar *> *bars;
 static QDNotificationWindow *singletonWindow;
+static dispatch_once_t onceToken;
 
 @implementation QDNotificationBar
 
@@ -97,6 +98,7 @@ static QDNotificationWindow *singletonWindow;
             [bars removeObject:self];
         }
         if (bars.count == 0) {
+            [self destorySingleton];
             [QDNotificationWindow deallocSingleton];
             [QDMuteDetector deallocSingleton];
         }
@@ -130,11 +132,16 @@ static QDNotificationWindow *singletonWindow;
 }
 
 + (void)singletonInitBar {
-    static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         bars = [NSMutableArray array];
         singletonWindow = [QDNotificationWindow defaultWindow];
     });
+}
+
+- (void)destorySingleton {
+    onceToken = 0l;
+    singletonWindow = nil;
+    bars = nil;
 }
 
 @end
