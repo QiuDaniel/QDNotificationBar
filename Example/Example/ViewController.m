@@ -24,7 +24,7 @@
     CGSize size = UIScreen.mainScreen.bounds.size;
     QDNotificationBar *bar = [QDNotificationBar makeNotificationBarWithCustomView:view block:^(QDNBMaker *make) {
         make.barFrame = CGRectMake(0, 100, size.width, 94);
-        make.soundId = 0;
+        make.soundId = 1312;
         make.stayDuration = 0;
         make.appearModel = QDNotificationBarAppearModelRight;
         make.animationDuration = 0.5;
