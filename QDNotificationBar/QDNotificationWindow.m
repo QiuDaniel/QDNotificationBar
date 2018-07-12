@@ -33,7 +33,7 @@ static QDNotificationWindow *_instance = nil;
 }
 
 + (void)deallocSingleton {
-    onceToken = 0;
+    onceToken = 0l;
     _instance = nil;
 }
 

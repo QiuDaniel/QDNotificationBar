@@ -55,7 +55,7 @@ void QDSoundMuteNotificationCompletionProc(SystemSoundID ssId, void *clientData)
 }
 
 + (void)deallocSingleton {
-    onceToken = 0;
+    onceToken = 0l;
     _instance = nil;
 }
 

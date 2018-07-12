@@ -96,6 +96,10 @@ static QDNotificationWindow *singletonWindow;
         if ([bars containsObject:self]) {
             [bars removeObject:self];
         }
+        if (bars.count == 0) {
+            [QDNotificationWindow deallocSingleton];
+            [QDMuteDetector deallocSingleton];
+        }
     }];
     
 }
