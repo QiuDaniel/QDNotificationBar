@@ -26,7 +26,7 @@
     maker.soundId = 0;
     maker.customView = view;
     maker.barFrame = view.frame;
-    maker.appearModel = QDNotificationBarAppearModelTop;
+    maker.appearMode = QDNotificationBarAppearModeTop;
     return maker;
 }
 
@@ -114,14 +114,14 @@ static dispatch_once_t onceToken;
 
 - (CGRect)hideFrame {
     CGRect frame = [self showFrame];
-    switch (self.maker.appearModel) {
-        case QDNotificationBarAppearModelTop:
+    switch (self.maker.appearMode) {
+        case QDNotificationBarAppearModeTop:
             frame.origin.y = -frame.size.height;
             break;
-        case QDNotificationBarAppearModelLeft:
+        case QDNotificationBarAppearModeLeft:
             frame.origin.x = -frame.size.width;
             break;
-        case QDNotificationBarAppearModelRight:
+        case QDNotificationBarAppearModeRight:
             frame.origin.x = [UIScreen mainScreen].bounds.size.width + frame.size.width;
             break;
         default:
