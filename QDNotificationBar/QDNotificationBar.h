@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, QDNotificationBarAppearMode) {
 @property (nonatomic, assign) NSTimeInterval stayDuration;
 @property (nonatomic, assign) UInt32 soundId;
 @property (nonatomic, copy) NSString *soundName;
-@property (nonatomic, assign) QDNotificationBarAppearMode appearModel;
+@property (nonatomic, assign) QDNotificationBarAppearMode appearMode;
 
 @end
 
