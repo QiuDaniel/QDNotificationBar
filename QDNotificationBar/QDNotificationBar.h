@@ -8,10 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-typedef NS_ENUM(NSUInteger, QDNotificationBarAppearModel) {
-    QDNotificationBarAppearModelTop = 0,
-    QDNotificationBarAppearModelLeft,
-    QDNotificationBarAppearModelRight
+typedef NS_ENUM(NSUInteger, QDNotificationBarAppearMode) {
+    QDNotificationBarAppearModeTop = 0,
+    QDNotificationBarAppearModeLeft,
+    QDNotificationBarAppearModeRight
 };
 
 @class QDNBMaker;
@@ -32,7 +32,7 @@ typedef NS_ENUM(NSUInteger, QDNotificationBarAppearModel) {
 @property (nonatomic, assign) NSTimeInterval stayDuration;
 @property (nonatomic, assign) UInt32 soundId;
 @property (nonatomic, copy) NSString *soundName;
-@property (nonatomic, assign) QDNotificationBarAppearModel appearModel;
+@property (nonatomic, assign) QDNotificationBarAppearMode appearModel;
 
 @end
 

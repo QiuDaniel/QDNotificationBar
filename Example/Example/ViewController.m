@@ -26,7 +26,7 @@
         make.barFrame = CGRectMake(0, 100, size.width, 94);
         make.soundId = 1312;
         make.stayDuration = 0;
-        make.appearModel = QDNotificationBarAppearModelRight;
+        make.appearMode = QDNotificationBarAppearModeRight;
         make.animationDuration = 0.5;
     }];
     [bar show];
